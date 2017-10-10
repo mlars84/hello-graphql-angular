@@ -152,7 +152,21 @@
 
 ### Writing Data with Mutations
   - Mutations are almost identical to queries with the exception that they are named operations which take variables as arguments.
-  - 
+  -
+
+### Apollo Client
+  - Tons of convenient features
+  - Queries, caching, mutations, optimistic UI, subscriptions, pagination, server-sde rendering, prefetching.
+  - works with just about everything
+  - used in some high profile production applications
+  
+### Graph.cool
+  - Permissions system keeps your application secure
+  - all the flexibility of GraphQL
+  - Automatic API from the data model means no mapping code
+  - Leverage the vibrant GraphQL ecosystem
+  - Serverless functions
+  - Smart integrations with tools like Auth0, Stripe, etc.
 
 
 ### C.I.D.E.R:
