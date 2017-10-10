@@ -1,0 +1,44 @@
+{
+  "name": "hello-graphql",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "concurrently \"npm run graphql-server\" \"ng serve\"",
+    "graphql-server": "node server/server.js",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/router": "^4.2.4",
+    "core-js": "^2.4.1",
+    "cors": "^2.8.4",
+    "express": "^4.16.1",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.7",
+    "graphql-request": "^1.4.0",
+    "graphql-tag": "^2.4.2",
+    "json-graphql-server": "^1.0.1",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.14"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.4.2",
+    "@angular/compiler-cli": "^4.2.4",
+    "@angular/language-service": "^4.2.4",
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1",
+    "typescript": "~2.3.3"
+  }
+}
