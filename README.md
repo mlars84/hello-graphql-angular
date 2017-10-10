@@ -54,4 +54,32 @@
   - modern standard
   - client for most frameworks (Angular, React, Vue, etc.)  
   - works with observables [RXJS](http://reactivex.io/rxjs/)
-  - 
+
+### First Client Application
+  - dip toes into water
+  - basic GraphQL application using json-graphql-server ()
+  - playground for covering the fundamentals
+  - [Best Practices](http://graphql.org/learn/best-practices/)
+  - write queries in GraphiQL and paste them into app.component.ts.
+- app.component.ts 
+  - import request
+  - set base url
+  - define query
+  - define interface that says what our query looks like
+  - call request
+  - type response and assign it to students
+
+### Schemas and Types
+  - Type System
+    - 
+  - Schema
+  - Query and Mutation Types
+  - Scalar
+
+
+### C.I.D.E.R:
+- component class
+- import
+- decoration 
+- enhance the component
+- R?
