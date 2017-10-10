@@ -136,7 +136,7 @@
       level
     }
     ```
-  - Sorting and Pagination:
+  - Filters - Sorting, Pagination, etc.:
     ```
     query {
       sorted: allCourses(sortField: "name", sortOrder: "asc") {
@@ -149,6 +149,10 @@
       }
     }
     ```
+
+### Writing Data with Mutations
+  - Mutations are almost identical to queries with the exception that they are named operations which take variables as arguments.
+  - 
 
 
 ### C.I.D.E.R:

@@ -25,6 +25,7 @@ interface Donut {
 
 interface QueryResponse {
   allStudents;
+  createCourseMutation;
 }
 
 const AllStudentsQuery = `
@@ -58,15 +59,35 @@ const StudentsCourses = `
   }
 `
 
-const allDonutsQuery = `
-  query allDonuts {
-    allDonuts {
-      ...donut
+const createCourseMutation = `
+  mutation createCourse($id:ID!, $name:String!, $description:String!, $level:String!, $student_id:ID!){
+    createCourse(id:$id, name:$name, description:$description, level:$level, student_id:$student_id){
+      id
+      name
+      description
+      level
+      student_id
     }
   }
-  fragment donut on Donut {
-    id
-    name
+`
+
+const updateCourseMutation = `
+  mutation updateCourse($id: ID!, $name: String, $description: String, $level: String, $student_id: ID){
+    updateCourse(id:$id, name:$name, description:$description, level:$level, student_id:$student_id) {
+      id
+      name
+      description
+      level
+      student_id
+    }
+  }
+`
+
+const removeCourseMutation = `
+  mutation removeCourse($id: ID!){
+    removeCourse(id:$id) {
+      id
+    }
   }
 `
 
@@ -81,9 +102,14 @@ const allDonutsQuery = `
 export class AppComponent {
   title = 'Students';
   students: Student[];
+  courses: Course[];
   constructor() {
     request(BASE_URL, StudentsCourses).then(
       (data: QueryResponse) => (this.students = data.allStudents)
     );
+    request(BASE_URL, createCourseMutation).then(
+      (data: QueryResponse) => (this.courses = data.createCourseMutation)
+    );
   }
 }
+ 
