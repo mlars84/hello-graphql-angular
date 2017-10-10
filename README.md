@@ -76,6 +76,80 @@
   - Query and Mutation Types
   - Scalar
 
+### Consuming Data with Queries
+  - Fields
+     - id, name, etc.
+  - Arguments
+    ```
+    query {
+      Course(id: 1) {
+        id
+        name
+        description
+      }
+    }
+    ```
+  - Aliases
+    ```
+    query {
+      firstStuden: Student(id: 4) {
+        id
+        firstName
+        lastName
+      }
+      lastStudent: Student (id:5) {
+        id
+        firstName
+        lastName
+      }
+    }
+    ```
+  - Nested Queries
+    ```
+    query {
+      Student(id: 4) {
+        id
+        firstName
+        lastName
+        Courses {
+          id 
+          name
+        }
+      }
+    }
+    ```
+  - Fragments 
+    ```
+    query {
+      Studen(id:4) {
+        id
+        firstName
+        Courses {
+          ...course (spread operator)
+        }
+      }
+    }
+
+    fragment course on Course {
+      id
+      name
+      level
+    }
+    ```
+  - Sorting and Pagination:
+    ```
+    query {
+      sorted: allCourses(sortField: "name", sortOrder: "asc") {
+        id
+        name
+      }
+      paginated: allCourses(page:0, perPage:3) {
+        id
+        name
+      }
+    }
+    ```
+
 
 ### C.I.D.E.R:
 - component class

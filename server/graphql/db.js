@@ -9,7 +9,7 @@ module.exports = {
     { id: 5, firstName: "Jane", lastName: "Smith", active: "false" }
   ],
   donuts: [
-    { id: 100, name: 'glazed'},
-    {id: 200, name: 'sugar'}
+    { id: 100, name: 'glazed' },
+    { id: 200, name: 'sugar' }
   ]
 };

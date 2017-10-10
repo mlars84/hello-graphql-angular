@@ -18,6 +18,11 @@ interface Course {
   level: string;
 }
 
+interface Donut {
+  id: string;
+  name: string;
+}
+
 interface QueryResponse {
   allStudents;
 }
@@ -33,6 +38,38 @@ const AllStudentsQuery = `
   }
 `;
 
+const StudentsCourses = `
+  query allStudents {
+    allStudents {
+      id
+      firstName
+      lastName
+      active
+      Courses {
+        ...course
+      }
+    }
+  }  
+  fragment course on Course {
+    id
+    name
+    description
+    level
+  }
+`
+
+const allDonutsQuery = `
+  query allDonuts {
+    allDonuts {
+      ...donut
+    }
+  }
+  fragment donut on Donut {
+    id
+    name
+  }
+`
+
 @Component({
   selector: 'app-root',
   template: `
@@ -45,7 +82,7 @@ export class AppComponent {
   title = 'Students';
   students: Student[];
   constructor() {
-    request(BASE_URL, AllStudentsQuery).then(
+    request(BASE_URL, StudentsCourses).then(
       (data: QueryResponse) => (this.students = data.allStudents)
     );
   }
